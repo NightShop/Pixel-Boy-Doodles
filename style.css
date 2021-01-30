@@ -1,0 +1,19 @@
+.container {
+    width: 720px;
+    margin: 0 auto;
+}
+
+#drawingZone {
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+    height:720px;
+}
+
+#singleSquare {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid burlywood;
+    width: 72px;
+    height: 72px;
+}
