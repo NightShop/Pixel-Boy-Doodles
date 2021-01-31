@@ -13,7 +13,7 @@
 #singleSquare {
     display: block;
     box-sizing: border-box;
-    border: 1px solid burlywood;
+    border: 1px solid green;
     width: 72px;
     height: 72px;
 }

@@ -5,7 +5,7 @@ let clearButton = document.querySelector("#clearButton");
 let updateGridButton = document.querySelector("#updateGridButton");
 let blackColorPenButton = document.querySelector("#blackColorPen");
 let rainbowColorPenButton = document.querySelector("#rainbowColorPen");
-let addHuePenButton = document.querySelector("#addHuePen");
+let addHuePenButton = document.querySelector("#addHueColorPen");
 
 clearButton.addEventListener("click", clearAllSquares);
 updateGridButton.addEventListener("click", updateGrid);
@@ -15,10 +15,59 @@ addHuePenButton.addEventListener("click", updatePenColor);
 
 updateGrid(null);
 
+function rgbToHsl(r, g, b) {
+    r /= 255, g /= 255, b /= 255;
+  
+    var max = Math.max(r, g, b), min = Math.min(r, g, b);
+    var h, s, l = (max + min) / 2;
+  
+    if (max == min) {
+      h = s = 0; // achromatic
+    } else {
+      var d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+  
+      switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+  
+      h /= 6;
+    }
+  
+    return [ h, s, l ];
+  }
+
+function randomColor() {
+    let hue = Math.floor(Math.random() * 360);
+    let color = `hsl(${hue}, 100%, 50%)`;
+    console.log(color);
+    return color;
+}
+
+function darkenColor(oldColor) {
+    if(oldColor == "")
+    {
+        oldColor = "hsl(0, 0%, 90%)";
+        return oldColor;
+    }
+
+    let arrRGB = oldColor.slice(4, -1);
+    arrRGB = arrRGB.split(",");
+    let arr = rgbToHsl(arrRGB[0], arrRGB[1], arrRGB[2]);    
+    arr[2] -= 0.1;
+    (arr[2] <= 0) ? arr[2] = "0" : false;
+    let newColor = `hsl(${arr[0]*360}, ${arr[1]*100}%, ${arr[2]*100}%)`;
+    return newColor;  
+
+
+}
 
 function updatePenColor(e) {
     let penColor = e.target.id;
-    console.log(penColor);
+    penColor = penColor.slice(0, -8);
+    colorOfPen = penColor;
 }
 function updateGrid(e) {
     // delete previous
@@ -60,13 +109,37 @@ function updateGrid(e) {
 }
 function colorSingleSquare(e) {
     if (e.buttons == "1") {
-        e.target.style.backgroundColor = "black";
+        switch (colorOfPen) {
+            case "black":
+                e.target.style.backgroundColor = "black";
+                break;
+            case "rainbow":
+                e.target.style.backgroundColor = randomColor();
+                break;
+            case "addHue":
+                currentColor = e.target.style.backgroundColor;
+                currentColor = darkenColor(currentColor);
+                e.target.style.backgroundColor = currentColor;
+                break;
+        }
     }
     e.preventDefault();
 }
 function colorHoveredSquare(e) {
     if (e.buttons == "1") {
-        e.target.style.backgroundColor = "black";
+        switch (colorOfPen) {
+            case "black":
+                e.target.style.backgroundColor = "black";
+                break;
+            case "rainbow":
+                e.target.style.backgroundColor = randomColor();
+                break;
+            case "addHue":
+                currentColor = e.target.style.backgroundColor;
+                currentColor = darkenColor(currentColor);
+                e.target.style.backgroundColor = currentColor;
+                break;
+        }
     }
 }
 function clearAllSquares() {
