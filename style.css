@@ -1,19 +1,52 @@
+@font-face {
+    font-family: 'ZX Spectrum';
+    src: url('font-zxspectrum/ZX-Spectrum.eot');
+    src: url('font-zxspectrum/ZX-Spectrum.eot?#iefix') format('embedded-opentype'),
+        url('font-zxspectrum/ZX-Spectrum.woff2') format('woff2'),
+        url('font-zxspectrum/ZX-Spectrum.woff') format('woff'),
+        url('font-zxspectrum/ZX-Spectrum.ttf') format('truetype'),
+        url('font-zxspectrum/ZX-Spectrum.svg#ZX-Spectrum') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: "ZX Spectrum";
+}
+
 .container {
-    width: 720px;
+    width: 500px;
     margin: 0 auto;
+}
+
+button {
+    border: 1px solid black;
+    display: block;
 }
 
 #drawingZone {
     display: flex;
     flex-wrap: wrap;
-    width: 720px;
-    height:720px;
+    width: 500px;
+    height: 500px;
 }
 
 #singleSquare {
     display: block;
     box-sizing: border-box;
     border: 1px solid green;
-    width: 72px;
-    height: 72px;
 }
+
+.clearButton-container {
+    width: 135px;
+    height: 40px;
+    display: flex;
+}
+
+#clearButton {
+    background: none;
+    border: none;
+    margin: auto auto;
+}
+

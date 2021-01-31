@@ -81,7 +81,7 @@ function updateGrid(e) {
     }
     let newNumberOfRows;
     if (e == null) {
-        newNumberOfRows = 10;
+        newNumberOfRows = 20;
     }
     else {
         do {

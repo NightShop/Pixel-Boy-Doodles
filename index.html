@@ -4,19 +4,24 @@
 <head>
     <meta charset="utf-8">
     <title>DOM-1</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="assets/favicon.png">
 </head>
 
 <body>
-    <button id="updateGridButton">Change Grid</button>
-    <button id="clearButton">Clear</button>
-    <button id="blackColorPen">Black color pen</button>
-    <button id="rainbowColorPen">Rainbow color pen</button>
-    <button id="addHueColorPen">Hue adding pen</button>
     <div class="container">
+        <button id="blackColorPen">Black color pen</button>
+        <button id="rainbowColorPen">Rainbow color pen</button>
+        <button id="addHueColorPen">Hue adding pen</button>
         <div id="drawingZone"></div>
+        <div class="modify-buttons">
+            <button id="updateGridButton">Change Grid</button>
+            <div class="clearButton-container">
+                <div class="pixelart-to-css"></div>
+                <button id="clearButton">Clear</button>
+            </div>
+        </div>
     </div>
 </body>
 <script src="script.js"></script>
