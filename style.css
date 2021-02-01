@@ -65,7 +65,10 @@ button:active {
 
     background-color: #0058f8;
 }
-
+@-webkit-keyframes wiggle {
+    50% {-webkit-object-position: 1% 1%;}
+    100% {-webkit-object-position: 101% 101%;}
+}
 
 @keyframes wiggle {
     50% {object-position: 1% 1%;}
