@@ -66,10 +66,12 @@ button:active {
     background-color: #0058f8;
 }
 
+
 @keyframes wiggle {
     50% {object-position: 1% 1%;}
     100% {object-position: 101% 101%;}
 }
+
 
 .blinking {
     animation: blink 4s steps(1,start) infinite;
