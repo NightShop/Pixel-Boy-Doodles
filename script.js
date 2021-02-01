@@ -81,11 +81,11 @@ function updateGrid(e) {
     }
     let newNumberOfRows;
     if (e == null) {
-        newNumberOfRows = 20;
+        newNumberOfRows = 15;
     }
     else {
         do {
-            newNumberOfRows = prompt("How many rows or columns?");
+            newNumberOfRows = prompt("How many rows/columns? (max 100)", "15");
         }
         while (newNumberOfRows <= 0 || newNumberOfRows > 100);
     }

@@ -30,14 +30,31 @@ html * {
 
 }
 
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modify-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
 h1 {
     color: #b8f818;
+    width: 250px;
 
 }
 
 button {
     border: none;
     padding: 10px;
+    
+}
+
+button:active {
+    transform: translateY(1px);
 }
 
 #face-sprite {
