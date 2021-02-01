@@ -98,6 +98,7 @@ function updateGrid(e) {
         singleSquare.setAttribute("id", "singleSquare");
         singleSquare.style.width = `${widthOfDrawingZone / newNumberOfRows}px`;
         singleSquare.style.height = `${widthOfDrawingZone / newNumberOfRows}px`;
+        singleSquare.style.backgroundColor = "#fcfcfc";
         singleSquare.addEventListener('mousedown', colorSingleSquare);
         singleSquare.addEventListener('mouseover', colorHoveredSquare);
 
@@ -144,6 +145,6 @@ function colorHoveredSquare(e) {
 }
 function clearAllSquares() {
     let allSquares = document.querySelectorAll("#singleSquare");
-    allSquares.forEach(singleSquare => singleSquare.style.backgroundColor = "White");
+    allSquares.forEach(singleSquare => singleSquare.style.backgroundColor = "#fcfcfc");
 }
 

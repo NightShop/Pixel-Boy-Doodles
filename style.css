@@ -11,8 +11,9 @@
     font-display: swap;
 }
 
-* {
+html * {
     font-family: "ZX Spectrum";
+    background-color: #0058f8;
 }
 
 .container {
@@ -20,11 +21,72 @@
     margin: 0 auto;
 }
 
-button {
-    border: 1px solid black;
-    display: block;
+#drawingZone {
+    border: 10px solid #F83800;
+    outline-style: inset;
+    outline-width: 10px;
+    outline-color: #7c7c7c ;
+    margin: 20px 0;
+
 }
 
+h1 {
+    color: #b8f818;
+
+}
+
+button {
+    border: none;
+    padding: 10px;
+}
+
+#face-sprite {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    animation: wiggle 1s steps(1,start) infinite;
+
+    background-color: #0058f8;
+}
+
+@keyframes wiggle {
+    50% {object-position: 1% 1%;}
+    100% {object-position: 101% 101%;}
+}
+
+.blinking {
+    animation: blink 4s steps(1,start) infinite;
+}
+
+@keyframes blink {
+    20% {color:#F83800;}
+    100% {color: #fbff00;}
+}
+
+#blackColorPen,
+#rainbowColorPen,
+#addHueColorPen {
+    width: 100%;
+    background: url("/img/button-background-long.png") no-repeat;
+    cursor: pointer;
+    background-position: 0px 5px;
+    background-size: 100% 80%;
+}
+
+#updateGridButton {
+    background: url("/img/button-background-medium.png") no-repeat;
+    cursor: pointer;
+    background-position: 0px 3px;
+    background-size: 100%;
+}
+
+#clearButton {
+    background: url("/img/button-background-small1.png") no-repeat;
+    cursor: pointer;
+    background-position: 0px 3px;;
+    background-size: 100%;
+    padding: 10px 25px;
+ }
 #drawingZone {
     display: flex;
     flex-wrap: wrap;
@@ -35,18 +97,9 @@ button {
 #singleSquare {
     display: block;
     box-sizing: border-box;
-    border: 1px solid green;
+    border: 1px solid #00000094  ;
 }
 
-.clearButton-container {
-    width: 135px;
-    height: 40px;
-    display: flex;
-}
 
-#clearButton {
-    background: none;
-    border: none;
-    margin: auto auto;
-}
+
 
