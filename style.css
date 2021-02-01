@@ -67,7 +67,7 @@ button {
 #rainbowColorPen,
 #addHueColorPen {
     width: 100%;
-    background: url("/img/button-background-long.png") no-repeat;
+    background: url("~/img/button-background-long.png") no-repeat;
     cursor: pointer;
     background-position: 0px 5px;
     background-size: 100% 80%;
@@ -81,7 +81,7 @@ button {
 }
 
 #clearButton {
-    background: url("/img/button-background-small1.png") no-repeat;
+    background: url("img/button-background-small1.png") no-repeat;
     cursor: pointer;
     background-position: 0px 3px;;
     background-size: 100%;
