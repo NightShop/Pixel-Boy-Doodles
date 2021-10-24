@@ -87,7 +87,7 @@ function updateGrid(e) {
         do {
             newNumberOfRows = prompt("How many rows/columns? (max 100)", "15");
         }
-        while (newNumberOfRows <= 0 || newNumberOfRows > 100);
+        while (newNubmerOfRows !== null && (newNumberOfRows <= 0 || newNumberOfRows > 100));
     }
     let widthOfDrawingZone = getComputedStyle(drawingZone).width;
     widthOfDrawingZone = widthOfDrawingZone.substring(0, widthOfDrawingZone.length - 2);
